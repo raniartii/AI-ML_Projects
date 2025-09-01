@@ -6,6 +6,22 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
+from pydantic import BaseModel
+
+class HouseFeatures(BaseModel):
+    area: float
+    bedrooms: int
+    bathrooms: int
+    stories: int
+    mainroad: str
+    guestroom: str
+    basement: str
+    hotwaterheating: str
+    airconditioning: str
+    parking: int
+    prefarea: str
+    furnishingstatus: str
+
 # Path to the serialized model. Override with env var if needed.
 MODEL_PATH = os.environ.get("MODEL_PATH", "model/lasso_house_price_model.pkl")
 
@@ -56,12 +72,64 @@ def _infer_expected_columns(model) -> Optional[List[str]]:
     return None
 
 def _load_model():
+    """
+    Robust model loader that handles joblib, pickle, Py2 pickles, and optionally cloudpickle.
+    """
+    import pickle, os
+
     global _model, _expected_columns
     if not os.path.exists(MODEL_PATH):
         raise FileNotFoundError(f"MODEL_PATH not found: {MODEL_PATH}")
-    with open(MODEL_PATH, "rb") as f:
-        _model = pickle.load(f)
+
+    # Pre-import common globals used inside sklearn objects (helps resolution)
+    try:
+        import numpy as _np   # noqa: F401
+        import sklearn as _sk # noqa: F401
+    except Exception:
+        pass
+
+    # 1) Try joblib (most common for sklearn)
+    joblib_err = None
+    try:
+        from joblib import load as joblib_load
+        _model = joblib_load(MODEL_PATH)
+    except Exception as e:
+        joblib_err = e
+        _model = None
+
+    # 2) Try plain pickle
+    if _model is None:
+        try:
+            with open(MODEL_PATH, "rb") as f:
+                _model = pickle.load(f)
+        except Exception as e_plain:
+            # 3) Try Py2-compatible pickle (bytes→str)
+            try:
+                with open(MODEL_PATH, "rb") as f:
+                    _model = pickle.load(f, fix_imports=True, encoding="latin1")
+            except Exception as e_latin1:
+                # 4) Optional: cloudpickle fallback
+                cloud_err = None
+                try:
+                    import cloudpickle
+                    with open(MODEL_PATH, "rb") as f:
+                        _model = cloudpickle.load(f)
+                except Exception as e_cloud:
+                    cloud_err = e_cloud
+                    raise RuntimeError(
+                        "Could not load model via joblib/pickle/cloudpickle. "
+                        f"joblib: {joblib_err}\n"
+                        f"pickle: {e_plain}\n"
+                        f"pickle(latin1): {e_latin1}\n"
+                        f"cloudpickle: {cloud_err}\n"
+                        "Fixes:\n"
+                        "  • Pin numpy & scikit-learn to your training versions in requirements.txt\n"
+                        "  • Load with the same library you used to save (joblib/pickle/cloudpickle)\n"
+                        "  • Or re-export the model from training with joblib.dump(...)\n"
+                    ) from e_cloud
+
     _expected_columns = _infer_expected_columns(_model)
+
 
 @app.on_event("startup")
 def _startup():
@@ -78,30 +146,43 @@ def schema():
         "has_feature_names_in_": hasattr(_model, "feature_names_in_")
     }
 
-def _to_dataframe(payload: Union[Dict[str, Any], List[Dict[str, Any]]] ) -> pd.DataFrame:
-    if isinstance(payload, dict):
-        df = pd.DataFrame([payload])
-    elif isinstance(payload, list):
-        if not payload:
-            raise HTTPException(status_code=400, detail="Empty list given.")
-        df = pd.DataFrame(payload)
-    else:
-        raise HTTPException(status_code=400, detail="Payload must be an object or a list of objects.")
-    # Shape to expected columns if we know them
-    if _expected_columns is not None:
-        # Reindex to expected columns: fill missing with NaN, drop extras.
-        df = df.reindex(columns=_expected_columns)
-    return df
+@app.post("/predict")
+def predict(payload: Union[HouseFeatures, List[HouseFeatures]]):
+    try:
+        # Pydantic models → dicts
+        if isinstance(payload, list):
+            payload = [item.dict() for item in payload]
+        else:
+            payload = payload.dict()
+
+        df = _to_dataframe(payload)
+
+        print("DEBUG - DataFrame:", df)
+
+        y_pred = _model.predict(df)
+        preds = [float(p) for p in y_pred]
+        return {"predictions": preds, "count": len(preds)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
+
 
 @app.post("/predict")
 def predict(payload: Union[Dict[str, Any], List[Dict[str, Any]]] ):
     try:
         df = _to_dataframe(payload)
+
+        # DEBUG: print to server logs
+        print("=== Incoming DataFrame ===")
+        print(df.head())
+        print(df.dtypes)
+        print("Any NaNs?", df.isna().sum())
+
         y_pred = _model.predict(df)
-        preds = [float(p) for p in y_pred]  # ensure JSON-serializable
+        preds = [float(p) for p in y_pred]
         return {"predictions": preds, "count": len(preds)}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
+
 
 if __name__ == "__main__":
     import uvicorn
