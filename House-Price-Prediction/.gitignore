@@ -1,0 +1,21 @@
+# ======================
+# Project-specific .gitignore for House-Price-Prediction
+# ======================
+
+# Ignore model artifacts
+*.pkl
+*.joblib
+*.h5
+*.ckpt
+
+# Ignore large datasets (if you keep them local)
+data/
+datasets/
+
+# Ignore Streamlit cache
+.streamlit/
+
+# Ignore temporary experiment outputs
+outputs/
+results/
+logs/

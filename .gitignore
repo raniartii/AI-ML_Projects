@@ -1,0 +1,78 @@
+# ======================
+# Global .gitignore for AI-ML_Projects
+# ======================
+
+# ======================
+# OS files
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Editor / IDE files
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ======================
+# Python cache
+# ======================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+
+# ======================
+# Virtual environments
+# ======================
+venv/
+.venv/
+env/
+ENV/
+
+# ======================
+# Jupyter
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# Logs / temp
+# ======================
+*.log
+*.out
+*.tmp
+*.bak
+
+# ======================
+# Build / Distribution
+# ======================
+build/
+dist/
+
+# ======================
+# Environment / Secrets
+# ======================
+*.env
+.env.*
+secrets.json
+
+# ======================
+# Docker
+# ======================
+*.pid
+*.sock
+
+# ======================
+# Power BI
+# ======================
+*.pbix.autosave
+
+# ======================
+# Optional (docs/backups you don't want in repo)
+*.pdf
+*.docx
