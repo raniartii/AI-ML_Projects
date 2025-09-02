@@ -1,31 +1,16 @@
+# api/main.py
 import os
-import pickle
-from typing import Any, Dict, List, Union, Optional
+from typing import Literal
 
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
 
-from pydantic import BaseModel
-
-class HouseFeatures(BaseModel):
-    area: float
-    bedrooms: int
-    bathrooms: int
-    stories: int
-    mainroad: str
-    guestroom: str
-    basement: str
-    hotwaterheating: str
-    airconditioning: str
-    parking: int
-    prefarea: str
-    furnishingstatus: str
-
-# Path to the serialized model. Override with env var if needed.
-MODEL_PATH = os.environ.get("MODEL_PATH", "model/lasso_house_price_model.pkl")
-
-app = FastAPI(title="House Price Model API", version="1.0.0")
+# -------------------------
+# 1) API setup
+# -------------------------
+app = FastAPI(title="House Price API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -33,108 +18,98 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-_model = None
-_expected_columns: Optional[List[str]] = None
+# -------------------------
+# 2) Input schema (12 raw features)
+# -------------------------
+FEATURE_ORDER = [
+    "area", "bedrooms", "bathrooms", "stories",
+    "mainroad", "guestroom", "basement",
+    "hotwaterheating", "airconditioning",
+    "parking", "prefarea", "furnishingstatus"
+]
 
-def _infer_expected_columns(model) -> Optional[List[str]]:
-    # 1) Most reliable for sklearn >=1.0
-    if hasattr(model, "feature_names_in_"):
-        return list(getattr(model, "feature_names_in_"))
-    # 2) Search for ColumnTransformer inside a Pipeline
-    try:
-        from sklearn.pipeline import Pipeline
-        from sklearn.compose import ColumnTransformer
-        if isinstance(model, Pipeline):
-            # direct
-            for name, step in model.named_steps.items():
-                if isinstance(step, ColumnTransformer):
-                    cols = []
-                    for _, trans, c in step.transformers:
-                        if c == "drop" or trans == "drop":
-                            continue
-                        if isinstance(c, (list, tuple)):
-                            cols.extend(list(c))
-                    return list(dict.fromkeys(cols)) if cols else None
-            # nested
-            for name, step in model.named_steps.items():
-                if isinstance(step, Pipeline):
-                    for n2, st2 in step.named_steps.items():
-                        if isinstance(st2, ColumnTransformer):
-                            cols = []
-                            for _, trans, c in st2.transformers:
-                                if c == "drop" or trans == "drop":
-                                    continue
-                                if isinstance(c, (list, tuple)):
-                                    cols.extend(list(c))
-                            return list(dict.fromkeys(cols)) if cols else None
-    except Exception:
-        pass
-    return None
+class HouseFeatures(BaseModel):
+    area: float = Field(..., gt=0)
+    bedrooms: int = Field(..., ge=0)
+    bathrooms: int = Field(..., ge=0)
+    stories: int = Field(..., ge=1)
+    mainroad: Literal["yes", "no"]
+    guestroom: Literal["yes", "no"]
+    basement: Literal["yes", "no"]
+    hotwaterheating: Literal["yes", "no"]
+    airconditioning: Literal["yes", "no"]
+    parking: int = Field(..., ge=0)
+    prefarea: Literal["yes", "no"]
+    furnishingstatus: Literal["furnished", "semi-furnished", "unfurnished"]
+
+# -------------------------
+# 3) Model loading
+#    - Prefer env var MODEL_PATH
+#    - Fallbacks: ./models/..., ./model/...
+# -------------------------
+MODEL_PATH = os.environ.get("MODEL_PATH", "").strip() or ""
+_DEFAULT_CANDIDATES = [
+    MODEL_PATH,
+    "models/lasso_house_price_model.pkl",   # common layout
+    "model/lasso_house_price_model.pkl",    # alt layout
+    "lasso_house_price_model.pkl",          # same dir
+]
+
+_model = None
 
 def _load_model():
-    """
-    Robust model loader that handles joblib, pickle, Py2 pickles, and optionally cloudpickle.
-    """
-    import pickle, os
+    """Load the saved scikit-learn Pipeline (joblib or pickle)."""
+    global _model
 
-    global _model, _expected_columns
-    if not os.path.exists(MODEL_PATH):
-        raise FileNotFoundError(f"MODEL_PATH not found: {MODEL_PATH}")
+    # pick first existing candidate
+    path = None
+    for p in _DEFAULT_CANDIDATES:
+        if p and os.path.exists(p):
+            path = p
+            break
+    if path is None:
+        raise FileNotFoundError(
+            "Could not find model file. Checked: "
+            + ", ".join([p for p in _DEFAULT_CANDIDATES if p])
+            + ". Set MODEL_PATH env var if needed."
+        )
 
-    # Pre-import common globals used inside sklearn objects (helps resolution)
-    try:
-        import numpy as _np   # noqa: F401
-        import sklearn as _sk # noqa: F401
-    except Exception:
-        pass
-
-    # 1) Try joblib (most common for sklearn)
-    joblib_err = None
+    # try joblib then pickle
+    last_err = None
     try:
         from joblib import load as joblib_load
-        _model = joblib_load(MODEL_PATH)
+        _model = joblib_load(path)
+        return
     except Exception as e:
-        joblib_err = e
-        _model = None
+        last_err = e
 
-    # 2) Try plain pickle
-    if _model is None:
-        try:
-            with open(MODEL_PATH, "rb") as f:
-                _model = pickle.load(f)
-        except Exception as e_plain:
-            # 3) Try Py2-compatible pickle (bytes→str)
-            try:
-                with open(MODEL_PATH, "rb") as f:
-                    _model = pickle.load(f, fix_imports=True, encoding="latin1")
-            except Exception as e_latin1:
-                # 4) Optional: cloudpickle fallback
-                cloud_err = None
-                try:
-                    import cloudpickle
-                    with open(MODEL_PATH, "rb") as f:
-                        _model = cloudpickle.load(f)
-                except Exception as e_cloud:
-                    cloud_err = e_cloud
-                    raise RuntimeError(
-                        "Could not load model via joblib/pickle/cloudpickle. "
-                        f"joblib: {joblib_err}\n"
-                        f"pickle: {e_plain}\n"
-                        f"pickle(latin1): {e_latin1}\n"
-                        f"cloudpickle: {cloud_err}\n"
-                        "Fixes:\n"
-                        "  • Pin numpy & scikit-learn to your training versions in requirements.txt\n"
-                        "  • Load with the same library you used to save (joblib/pickle/cloudpickle)\n"
-                        "  • Or re-export the model from training with joblib.dump(...)\n"
-                    ) from e_cloud
+    try:
+        import pickle
+        with open(path, "rb") as f:
+            _model = pickle.load(f)
+        return
+    except Exception as e2:
+        raise RuntimeError(
+            f"Failed to load model at '{path}'. "
+            f"joblib error: {last_err}; pickle error: {e2}"
+        )
 
-    _expected_columns = _infer_expected_columns(_model)
-
+def _normalize_payload(d: dict) -> dict:
+    """Lower/trim categorical strings to the expected forms."""
+    out = dict(d)
+    for k in ["mainroad","guestroom","basement",
+              "hotwaterheating","airconditioning","prefarea",
+              "furnishingstatus"]:
+        out[k] = str(out[k]).strip().lower()
+    return out
 
 @app.on_event("startup")
 def _startup():
     _load_model()
 
+# -------------------------
+# 4) Utility endpoints
+# -------------------------
 @app.get("/health")
 def health():
     return {"ok": True}
@@ -142,48 +117,41 @@ def health():
 @app.get("/schema")
 def schema():
     return {
-        "expected_columns": _expected_columns,
-        "has_feature_names_in_": hasattr(_model, "feature_names_in_")
+        "feature_order": FEATURE_ORDER,
+        "model_loaded": _model is not None,
+        "model_type": type(_model).__name__ if _model is not None else None,
+        "expects_raw_columns": True,  # pipeline handles preprocessing internally
     }
 
+# -------------------------
+# 5) Prediction endpoint
+# -------------------------
 @app.post("/predict")
-def predict(payload: Union[HouseFeatures, List[HouseFeatures]]):
+def predict(features: HouseFeatures):
+    """
+    Accepts a single example matching HouseFeatures.
+    Returns a single numeric prediction.
+    """
     try:
-        # Pydantic models → dicts
-        if isinstance(payload, list):
-            payload = [item.dict() for item in payload]
-        else:
-            payload = payload.dict()
+        payload = _normalize_payload(features.model_dump())
+        X = pd.DataFrame([payload], columns=FEATURE_ORDER)
 
-        df = _to_dataframe(payload)
-
-        print("DEBUG - DataFrame:", df)
-
-        y_pred = _model.predict(df)
-        preds = [float(p) for p in y_pred]
-        return {"predictions": preds, "count": len(preds)}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
-
-
-@app.post("/predict")
-def predict(payload: Union[Dict[str, Any], List[Dict[str, Any]]] ):
-    try:
-        df = _to_dataframe(payload)
-
-        # DEBUG: print to server logs
+        # DEBUG (optional): uncomment if you need server-side insight
         print("=== Incoming DataFrame ===")
-        print(df.head())
-        print(df.dtypes)
-        print("Any NaNs?", df.isna().sum())
+        print(X.head())
+        print(X.dtypes)
 
-        y_pred = _model.predict(df)
-        preds = [float(p) for p in y_pred]
-        return {"predictions": preds, "count": len(preds)}
+        y_pred = _model.predict(X)
+        return {"prediction": float(y_pred[0])}
     except Exception as e:
+        # If anything goes wrong inside the model/pipeline
         raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
 
-
+# -------------------------
+# 6) Local dev entrypoint
+# -------------------------
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+# To run: python api/main.py
+# Then open http://localhost:8000/docs for interactive API docs

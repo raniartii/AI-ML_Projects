@@ -19,3 +19,25 @@ datasets/
 outputs/
 results/
 logs/
+
+
+# Ignore specific docs
+Readme.md
+useful_commands.md
+
+# Ignore unused API folder
+house_price_deploy/api/
+
+# Ignore unused deployment files
+house_price_deploy/Dockerfile.api
+house_price_deploy/Dockerfile.streamlit
+house_price_deploy/streamlit_app.py
+
+echo "
+# Readme.md
+# useful_commands.md
+house_price_deploy/api/
+house_price_deploy/Dockerfile.api
+house_price_deploy/Dockerfile.streamlit
+house_price_deploy/streamlit_app.py
+" >> .gitignore
