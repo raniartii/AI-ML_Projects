@@ -31,13 +31,27 @@ The app provides a simple interface where users can:
 
 ```
 House-Price-Prediction/
-│── data/                 # Raw dataset (optional for repo)
-│── notebooks/            # Jupyter notebooks for EDA, training, tuning
-│── house_price_deploy/   # Deployment folder
-│   ├── app.py            # Streamlit app
-│   ├── house_price_pipeline.pkl  # Saved model
-│── requirements.txt      # Project dependencies
-│── README.md             # Project description
+│── notebooks/                
+│── 01_exploration.ipynb
+│── 02_preprocessing.ipynb
+│── 03_modeling.ipynb     
+│
+│── house_price_deploy/       # Deployment-related files
+│   ├── dataset/              # Store raw data
+│   │   └── Housing.csv
+│   ├── api/                  # API folder (future use)
+│   │   └── main.py
+│   ├── app.py                # Streamlit app
+│   ├── Dockerfile.api        # (ignored for now)
+│   ├── Dockerfile.streamlit  # (ignored for now)
+│   └── streamlit_app.py      # (ignored for now)
+│
+│── model/                   # Trained & saved model
+│   └── lasso_house_price_model.pkl # (ignored)
+│
+│── README.md
+│── requirements.txt
+│── .gitignore
 ```
 
 ---
