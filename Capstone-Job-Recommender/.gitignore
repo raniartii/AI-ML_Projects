@@ -1,0 +1,26 @@
+# ======================
+# Project-specific .gitignore for Capstone-Job-Recommender
+# ======================
+
+# Ignore model artifacts
+*.pkl
+*.joblib
+*.h5
+*.ckpt
+
+# Ignore Streamlit cache
+.streamlit/
+
+# Ignore temporary experiment outputs
+outputs/
+results/
+logs/
+
+
+# Ignore specific docs
+To-Do.md
+Useful_Commands.md
+notebooks/hidden.ipynb
+
+#Ignore specific folders
+datasets/prepared/
