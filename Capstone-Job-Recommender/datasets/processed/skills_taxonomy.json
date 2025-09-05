@@ -1,0 +1,50 @@
+{
+  "Languages": [
+    "Python", "JavaScript", "Java", "C++", "C#", "Go", "Rust", "R", "SQL", "TypeScript", 
+    "Scala", "PHP", "Ruby", "MATLAB", "Shell", "Bash", "Rust"
+  ],
+"Web": [
+    "React", "Node.js", "Express", "Next.js", "Angular", "Vue.js", "Svelte", "HTML", "CSS", 
+    "Tailwind", "Bootstrap", "jQuery"
+  ],
+  "DataML": [
+    "Pandas", "NumPy", "scikit-learn", "TensorFlow", "PyTorch", "Keras", "XGBoost", "LightGBM", 
+    "CatBoost", "Spark", "Hadoop", "Dask", "Matplotlib", "Seaborn", "Plotly"
+  ],
+  "DevOps": [
+    "Docker", "Kubernetes", "Git", "CI/CD", "Jenkins", "GitHub Actions", "Travis CI", "AWS", 
+    "GCP", "Azure", "Terraform", "Ansible", "Linux", "Bash", "Helm", "Prometheus", "Grafana"
+  ],
+  "DB": [
+    "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis", "Cassandra", "SQLite", "OracleDB", 
+    "Elasticsearch", "DynamoDB"
+  ],
+  "Frameworks": [
+    "FastAPI", "Flask", "Django", "Spring Boot", "Rails", "Airflow", "Tableau", "Power BI", 
+    "HuggingFace Transformers", "LangChain", "Streamlit", "Dash"
+  ],
+  "Cloud": [
+    "AWS", "GCP", "Azure", "DigitalOcean", "Heroku", "Netlify", "Vercel"
+  ],
+
+  "---ALIASES---": {},
+
+  "postgres": ["PostgreSQL"],
+  "postgresql": ["PostgreSQL"],
+  "pg": ["PostgreSQL"],
+  "tf": ["TensorFlow"],
+  "torch": ["PyTorch"],
+  "pytorch": ["PyTorch"],
+  "ts": ["TypeScript"],
+  "sklearn": ["scikit-learn"],
+  "matlab": ["MATLAB"],
+  "gcp": ["GCP"],
+  "aws": ["AWS"],
+  "az": ["Azure"],
+  "js": ["JavaScript"],
+  "py": ["Python"],
+  "cpp": ["C++"],
+  "c#": ["C#"],
+  "sql": ["SQL"],
+  "ml": ["scikit-learn", "TensorFlow", "PyTorch"]
+}
