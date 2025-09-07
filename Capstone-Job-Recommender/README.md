@@ -1,6 +1,3 @@
-Here’s a **README.md** draft tailored to your project (Job-Resume-Project recommender). You can drop it directly into your repo and tweak details:
-
-```markdown
 # 🚀 Job & Resume Recommender System
 
 A smart career assistant that matches **your resume** with **job datasets** to suggest:
