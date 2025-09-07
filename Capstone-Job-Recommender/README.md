@@ -52,11 +52,12 @@ AI-ML_Projects/
 ---
 
 ## ⚙️ Installation
+
 1. Clone the repo:
    ```bash
    git clone https://github.com/your-username/job-resume-project.git
    cd job-resume-project
-````
+   ```
 
 2. Create a virtual environment & install requirements:
 
