@@ -1,0 +1,126 @@
+{
+  "Languages": [
+    "Python", "JavaScript", "Java", "C++", "C#", "Go", "Rust", "R", "SQL", "TypeScript",
+    "Scala", "PHP", "Ruby", "MATLAB", "Shell", "Bash", "Perl", "Objective-C",
+    "Dart", "Elixir", "Clojure", "Haskell", "Kotlin", "Swift"
+  ],
+  "Web": [
+    "React", "Node.js", "Express", "Next.js", "Angular", "Vue.js", "Svelte", "Nuxt.js",
+    "Gatsby", "Remix", "Lit", "HTMX", "HTML", "CSS", "Tailwind", "Bootstrap", "Bulma",
+    "Material UI", "jQuery", "Backbone.js"
+  ],
+  "DataML": [
+    "Pandas", "NumPy", "scikit-learn", "TensorFlow", "PyTorch", "Keras", "XGBoost",
+    "LightGBM", "CatBoost", "Spark", "Hadoop", "Hive", "Pig", "Dask", "Ray",
+    "H2O.ai", "MLlib", "Matplotlib", "Seaborn", "Plotly", "Bokeh", "Altair"
+  ],
+  "DevOps": [
+    "Docker", "Kubernetes", "Git", "CI/CD", "Jenkins", "GitHub Actions", "Travis CI",
+    "CircleCI", "GitLab CI", "AWS", "GCP", "Azure", "Terraform", "Ansible", "Puppet",
+    "Chef", "Linux", "Bash", "Helm", "Prometheus", "Grafana", "Nagios", "Splunk",
+    "New Relic", "ELK Stack"
+  ],
+  "DB": [
+    "PostgreSQL", "MySQL", "MariaDB", "MongoDB", "Redis", "Cassandra", "SQLite",
+    "OracleDB", "Elasticsearch", "DynamoDB", "CouchDB", "Neo4j", "InfluxDB",
+    "Snowflake", "BigQuery", "Redshift", "Teradata"
+  ],
+  "Frameworks": [
+    "FastAPI", "Flask", "Django", "Spring Boot", "Rails", "Laravel", "Symfony",
+    "ASP.NET", "Express", "Meteor", "Airflow", "Prefect", "Tableau", "Power BI",
+    "QlikView", "Looker", "HuggingFace Transformers", "LangChain", "Streamlit",
+    "Dash", "Gradio", "Panel"
+  ],
+  "Cloud": [
+    "AWS", "GCP", "Azure", "DigitalOcean", "Heroku", "Netlify", "Vercel",
+    "IBM Cloud", "Oracle Cloud", "Alibaba Cloud", "Linode"
+  ],
+  "Mobile": [
+    "Android", "iOS", "React Native", "Flutter", "Swift", "Kotlin", "Xamarin",
+    "Cordova", "Ionic"
+  ],
+  "TestingQA": [
+    "Selenium", "Cypress", "JUnit", "PyTest", "Mocha", "Jest", "TestNG",
+    "Postman", "Cucumber", "Playwright", "Robot Framework"
+  ],
+  "Security": [
+    "Penetration Testing", "Ethical Hacking", "SOC", "SIEM", "IAM",
+    "Firewall", "Encryption", "OWASP", "Nessus", "Burp Suite", "Cybersecurity",
+    "ISO 27001", "GDPR"
+  ],
+  "Design": [
+    "Figma", "Sketch", "Adobe XD", "InVision", "Miro", "Canva",
+    "Photoshop", "Illustrator", "Zeplin", "Balsamiq"
+  ],
+  "BigDataETL": [
+    "ETL", "Informatica", "Talend", "SSIS", "DataStage", "Pentaho",
+    "Kafka", "NiFi", "Flink", "Storm"
+  ],
+  "Collaboration": [
+    "Jira", "Confluence", "Trello", "Slack", "MS Teams", "Asana",
+    "Notion", "ClickUp", "Monday.com"
+  ],
+  "GeneralEng": [
+    "Software Engineering", "Agile", "Scrum", "Kanban",
+    "OOP", "Design Patterns", "System Design"
+  ],
+
+  "---NonTechnical---": {},
+
+  "Management": [
+    "Project Management", "Program Management", "Agile Coach",
+    "Scrum Master", "Stakeholder Management", "Roadmap Planning"
+  ],
+  "Product": [
+    "Product Manager", "Product Owner", "Product Design",
+    "Market Research", "Go-to-Market", "Business Strategy"
+  ],
+  "HR": [
+    "Human Resources", "Recruitment", "Talent Acquisition",
+    "Onboarding", "Payroll", "L&D", "Organizational Development"
+  ],
+  "Finance": [
+    "Finance", "Accounting", "Auditing", "Budgeting", "Forecasting",
+    "Financial Analysis", "Taxation", "Investment Banking"
+  ],
+  "Operations": [
+    "Operations", "Supply Chain", "Procurement", "Logistics",
+    "Inventory Management", "Distribution", "Vendor Management"
+  ],
+  "Marketing": [
+    "Marketing", "Digital Marketing", "SEO", "SEM", "Content Marketing",
+    "Campaign Management", "Advertising", "Brand Management", "Social Media"
+  ],
+  "Sales": [
+    "Sales", "Business Development", "Account Management",
+    "CRM", "Lead Generation", "Inside Sales", "Customer Success"
+  ],
+  "Consulting": [
+    "Consulting", "Business Consulting", "Management Consulting",
+    "Strategy", "Advisory", "Process Improvement"
+  ],
+  "Education": [
+    "Teaching", "Training", "Curriculum Development",
+    "Instructional Design", "Faculty", "Mentoring"
+  ],
+  "Healthcare": [
+    "Healthcare", "Medical", "Clinical", "Nursing", "Pharma",
+    "Biotech", "Hospital Administration"
+  ],
+  "Legal": [
+    "Legal", "Compliance", "Contract Management",
+    "Risk Management", "Regulatory", "Paralegal"
+  ],
+  "Administration": [
+    "Office Administration", "Clerical", "Executive Assistant",
+    "Document Management", "Facilities Management"
+  ],
+  "Communication": [
+    "Communication", "Presentation Skills", "Public Speaking",
+    "Negotiation", "Business Writing"
+  ],
+  "SoftSkills": [
+    "Leadership", "Teamwork", "Problem Solving", "Critical Thinking",
+    "Time Management", "Adaptability", "Creativity", "Collaboration"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "Python": [
+    "Data cleaning and visualization with Pandas/Matplotlib",
+    "Build a House Price Prediction model with scikit-learn",
+    "API wrapper for a public dataset (REST + JSON)",
+    "Build a web scraper for job postings and export to CSV",
+    "Automate Excel report generation using Python + OpenPyXL"
+  ],
+  "SQL": [
+    "Design a star-schema database and run analytical queries",
+    "ETL pipeline project loading CSVs into PostgreSQL",
+    "Sales dashboard using SQL + Tableau/Power BI",
+    "Write stored procedures for HR analytics queries",
+    "Optimize slow queries with indexing and EXPLAIN plans"
+  ],
+  "Pandas": [
+    "Customer churn analysis with Pandas",
+    "A/B test analyzer notebook with Pandas + SciPy",
+    "COVID-19 data tracker and visualization",
+    "Exploratory analysis of e-commerce sales data"
+  ],
+  "scikit-learn": [
+    "Spam email classifier using TF-IDF + Logistic Regression",
+    "Credit risk prediction with Random Forests",
+    "Clustering customer segments with KMeans",
+    "Predict housing rentals with Gradient Boosting"
+  ],
+  "TensorFlow": [
+    "Image classifier on CIFAR-10",
+    "Text sentiment classifier with LSTM",
+    "Build a digit recognizer with CNNs",
+    "Train a neural machine translation model (small corpus)"
+  ],
+  "PyTorch": [
+    "Handwritten digit recognizer with CNN",
+    "Movie review sentiment analysis with transformers",
+    "Image caption generator (CNN + RNN)",
+    "Build a chatbot with seq2seq"
+  ],
+  "React": [
+    "Trello-like board with drag-and-drop",
+    "Admin dashboard with charts and filters",
+    "Portfolio website with React + Tailwind",
+    "Weather forecast app consuming public APIs"
+  ],
+  "FastAPI": [
+    "RESTful URL shortener with FastAPI + SQLite",
+    "Auth microservice with JWT login",
+    "Blog API with CRUD operations and Swagger docs",
+    "Serve a ML model with FastAPI endpoint"
+  ],
+  "Docker": [
+    "Dockerize a 3-tier web app (frontend, backend, db)",
+    "Setup docker-compose for local dev environment",
+    "Package and ship a ML inference API with Docker",
+    "Create a lightweight developer sandbox container"
+  ],
+  "Kubernetes": [
+    "Deploy a sample microservice app on Minikube",
+    "Autoscaling demo with HPA on Kubernetes",
+    "Setup CI/CD pipeline deploying to K8s",
+    "Deploy monitoring stack (Prometheus + Grafana)"
+  ],
+  "Tableau": [
+    "Create a Sales KPI dashboard",
+    "Customer segmentation visualization",
+    "HR diversity and inclusion dashboard",
+    "Supply chain performance dashboard"
+  ],
+  "Power BI": [
+    "HR attrition dashboard",
+    "Finance budget vs actuals analysis",
+    "Retail sales performance report",
+    "Healthcare patient admission trends"
+  ],
+  "Excel": [
+    "Automate budget tracking with pivot tables",
+    "Create an inventory management template",
+    "Financial KPI dashboard in Excel",
+    "What-if analysis model for sales forecasting"
+  ],
+  "NLP": [
+    "Build a resume keyword extractor",
+    "Topic modeling on news articles",
+    "Sentiment analysis of tweets",
+    "FAQ chatbot using pretrained embeddings"
+  ],
+  "Cybersecurity": [
+    "Setup a home lab with Kali Linux",
+    "Write a phishing detection script",
+    "Build a SIEM log parser",
+    "Conduct a simple vulnerability scan report"
+  ],
+  "DevOps": [
+    "CI/CD pipeline with GitHub Actions",
+    "Monitoring setup with Prometheus + Grafana",
+    "Infrastructure as Code demo with Terraform",
+    "Automate deployment with Ansible"
+  ],
+  "Cloud (AWS)": [
+    "Deploy a static website on S3 + CloudFront",
+    "ETL pipeline with AWS Glue and Athena",
+    "Serverless REST API using AWS Lambda",
+    "Data lake demo with S3 and Redshift Spectrum"
+  ],
+  "Marketing": [
+    "Analyze Google Trends data for product insights",
+    "Create a social media engagement dashboard",
+    "Competitor website SEO audit",
+    "Email campaign A/B test report"
+  ],
+  "Finance": [
+    "Build an Excel model for revenue forecasting",
+    "Stock portfolio tracker with risk metrics",
+    "Cash flow projection model",
+    "Cryptocurrency price tracker dashboard"
+  ],
+  "HR": [
+    "Design an employee satisfaction survey and analyze results",
+    "Predict employee attrition using logistic regression",
+    "Diversity and inclusion dashboard with HR data",
+    "Automate employee onboarding checklist in Excel"
+  ],
+  "Content Writing": [
+    "Start a personal blog with 5 SEO-optimized articles",
+    "Write a product case study with visuals",
+    "Create a technical tutorial series on Medium",
+    "Draft a whitepaper summarizing an industry trend"
+  ],
+  "Project Management": [
+    "Create a Gantt chart for a software launch",
+    "Build a risk register for a sample project",
+    "Kanban workflow setup with Trello/Jira",
+    "Document a project charter template"
+  ],
+  "Design": [
+    "Redesign a landing page in Figma",
+    "Mobile app prototype with Adobe XD",
+    "Brand guideline document for a startup",
+    "Design social media post templates in Canva"
+  ],
+  "Data Visualization": [
+    "Build interactive dashboards with Plotly/Dash",
+    "Create a geospatial map with Folium",
+    "Visualize network graphs with NetworkX",
+    "Interactive data storytelling with Flourish"
+  ],
+  "Data Engineering": [
+    "Build a batch ETL with Airflow",
+    "Streaming pipeline with Kafka",
+    "Data warehouse schema in Snowflake/BigQuery",
+    "Implement SCD Type 2 in a warehouse"
+  ],
+  "Business Analysis": [
+    "SWOT analysis for a case company",
+    "Requirements document for an e-commerce system",
+    "Business process model in BPMN",
+    "Competitive analysis report"
+  ],
+  "Healthcare": [
+    "Analyze patient readmission dataset",
+    "Dashboard for hospital resource utilization",
+    "Predict heart disease risk with ML",
+    "Medical chatbot for symptom triage (rule-based)"
+  ],
+  "Education": [
+    "Design an online course curriculum",
+    "Student performance analysis using ML",
+    "Interactive quiz app with scoring",
+    "Survey on digital learning adoption"
+  ]
+}

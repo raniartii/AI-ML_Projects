@@ -1,0 +1,103 @@
+{
+  "Data": [
+    "data ", "bi ", "business intelligence", "etl", "sql ", "power bi", "tableau",
+    "data engineer", "data warehouse", "data pipeline"
+  ],
+  "ML/AI": [
+    "machine learning", "ml ", "ai ", "nlp", "deep learning", "computer vision",
+    "neural network", "transformer", "llm", "langchain"
+  ],
+  "Backend": [
+    "backend", "back-end", "api", "java ", "spring", "django", "flask", "node",
+    "express", "fastapi", "php", "ruby", "golang"
+  ],
+  "Frontend": [
+    "frontend", "front-end", "react", "angular", "vue", "svelte", "ui ", "ux ",
+    "javascript", "typescript", "next.js"
+  ],
+  "Design/Creative": [
+    "graphic design", "ui design", "ux design", "visual design",
+    "illustrator", "photoshop", "creative", "branding"
+  ],
+  "Product Design": [
+    "product design", "product designer", "ux research", "user research",
+    "prototyping", "wireframe", "design thinking", "figma", "sketch",
+    "invision", "usability testing"
+  ],
+  "Web Design": [
+    "web design", "web designer", "website design", "wordpress",
+    "wix", "squarespace", "html css design", "landing page",
+    "responsive design", "adobe xd"
+  ],
+  "DevOps": [
+    "devops", "cloud", "aws", "azure", "gcp", "kubernetes", "docker", "ci/cd",
+    "sre", "infrastructure as code", "terraform", "ansible", "jenkins", "github actions"
+  ],
+  "Security": [
+    "security", "soc", "iam", "infosec", "penetration", "siem", "cybersecurity",
+    "vulnerability", "firewall", "encryption"
+  ],
+  "Support/IT": [
+    "help desk", "technical support", "system admin", "sysadmin", "it support",
+    "desktop support", "service desk"
+  ],
+  "Analytics": [
+    "business analyst", "analyst ", "insights", "reporting", "kpi", "metrics",
+    "data analysis", "predictive analytics"
+  ],
+  "Mobile": [
+    "ios", "android", "mobile", "swift", "kotlin", "react native", "flutter"
+  ],
+  "Infrastructure": [
+    "infra", "infrastructure", "network", "systems", "admin", "cloud", "server",
+    "datacenter"
+  ],
+  "Architect": [
+    "architect", "solution architect", "enterprise architect", "technical architect",
+    "system design"
+  ],
+  "Testing": [
+    "qa", "tester", "quality assurance", "testing", "automation", "selenium",
+    "cypress", "unit test", "integration test"
+  ],
+  "Engineering": [
+    "engineer", "engineering"
+  ],
+  "Product/Management": [
+    "product manager", "product owner", "scrum master", "program manager",
+    "agile", "stakeholder", "roadmap", "business strategy"
+  ],
+  "HR/People": [
+    "human resources", "talent acquisition", "recruiter", "hr manager",
+    "people operations", "organizational development", "payroll"
+  ],
+  "Finance/Accounting": [
+    "finance", "accounting", "auditor", "financial analyst",
+    "investment", "banking", "ca ", "cpa", "budgeting", "forecasting"
+  ],
+  "Operations/Supply Chain": [
+    "operations", "supply chain", "logistics", "procurement",
+    "inventory", "vendor", "manufacturing", "distribution"
+  ],
+  "Marketing/Sales": [
+    "marketing", "digital marketing", "seo", "sem", "ppc", "crm",
+    "sales", "business development", "brand manager", "advertising",
+    "campaign", "content marketing"
+  ],
+  "Consulting/Strategy": [
+    "consultant", "strategy", "management consulting", "advisory",
+    "business consulting", "transformation", "process improvement"
+  ],
+  "Education/Training": [
+    "trainer", "faculty", "lecturer", "teaching", "curriculum",
+    "learning and development", "l&d", "instructional design"
+  ],
+  "Healthcare/Pharma": [
+    "healthcare", "hospital", "clinical", "medical", "doctor",
+    "nurse", "pharma", "biotech", "drug safety"
+  ],
+  "Legal/Compliance": [
+    "legal", "compliance", "lawyer", "attorney", "paralegal",
+    "contract", "risk management", "regulatory"
+  ]
+}
