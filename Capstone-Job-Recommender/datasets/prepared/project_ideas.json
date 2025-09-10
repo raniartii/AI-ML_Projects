@@ -3,6 +3,8 @@
     "Data cleaning and visualization with Pandas/Matplotlib",
     "Build a House Price Prediction model with scikit-learn",
     "API wrapper for a public dataset (REST + JSON)",
+    "Automate daily tasks with Python scripts (file rename, web scraping)",
+    "Build a command-line expense tracker",
     "Build a web scraper for job postings and export to CSV",
     "Automate Excel report generation using Python + OpenPyXL"
   ],
@@ -10,122 +12,127 @@
     "Design a star-schema database and run analytical queries",
     "ETL pipeline project loading CSVs into PostgreSQL",
     "Sales dashboard using SQL + Tableau/Power BI",
+    "Design an inventory management schema",
+    "Write optimized queries for 1M+ row dataset",
     "Write stored procedures for HR analytics queries",
     "Optimize slow queries with indexing and EXPLAIN plans"
   ],
   "Pandas": [
     "Customer churn analysis with Pandas",
     "A/B test analyzer notebook with Pandas + SciPy",
+    "Create a Pandas-based data profiling tool",
     "COVID-19 data tracker and visualization",
     "Exploratory analysis of e-commerce sales data"
   ],
   "scikit-learn": [
     "Spam email classifier using TF-IDF + Logistic Regression",
     "Credit risk prediction with Random Forests",
+    "Wine quality predictor with SVM",
     "Clustering customer segments with KMeans",
     "Predict housing rentals with Gradient Boosting"
   ],
   "TensorFlow": [
     "Image classifier on CIFAR-10",
     "Text sentiment classifier with LSTM",
+    "Build a recommender system using embeddings",
     "Build a digit recognizer with CNNs",
     "Train a neural machine translation model (small corpus)"
   ],
   "PyTorch": [
     "Handwritten digit recognizer with CNN",
     "Movie review sentiment analysis with transformers",
+    "Build a neural style transfer app",
     "Image caption generator (CNN + RNN)",
     "Build a chatbot with seq2seq"
   ],
   "React": [
     "Trello-like board with drag-and-drop",
     "Admin dashboard with charts and filters",
+    "Responsive portfolio website with React Router",
     "Portfolio website with React + Tailwind",
     "Weather forecast app consuming public APIs"
   ],
   "FastAPI": [
     "RESTful URL shortener with FastAPI + SQLite",
     "Auth microservice with JWT login",
+    "Build a blog backend API with CRUD",
     "Blog API with CRUD operations and Swagger docs",
     "Serve a ML model with FastAPI endpoint"
   ],
   "Docker": [
     "Dockerize a 3-tier web app (frontend, backend, db)",
     "Setup docker-compose for local dev environment",
+    "Publish an image to DockerHub with CI pipeline",
     "Package and ship a ML inference API with Docker",
     "Create a lightweight developer sandbox container"
   ],
   "Kubernetes": [
     "Deploy a sample microservice app on Minikube",
     "Autoscaling demo with HPA on Kubernetes",
+    "Setup Kubernetes secrets and config maps",
     "Setup CI/CD pipeline deploying to K8s",
     "Deploy monitoring stack (Prometheus + Grafana)"
   ],
   "Tableau": [
     "Create a Sales KPI dashboard",
     "Customer segmentation visualization",
+    "HR recruitment funnel dashboard",
     "HR diversity and inclusion dashboard",
     "Supply chain performance dashboard"
   ],
   "Power BI": [
     "HR attrition dashboard",
     "Finance budget vs actuals analysis",
+    "Regional sales performance dashboard",
     "Retail sales performance report",
     "Healthcare patient admission trends"
-  ],
-  "Excel": [
-    "Automate budget tracking with pivot tables",
-    "Create an inventory management template",
-    "Financial KPI dashboard in Excel",
-    "What-if analysis model for sales forecasting"
-  ],
-  "NLP": [
-    "Build a resume keyword extractor",
-    "Topic modeling on news articles",
-    "Sentiment analysis of tweets",
-    "FAQ chatbot using pretrained embeddings"
-  ],
-  "Cybersecurity": [
-    "Setup a home lab with Kali Linux",
-    "Write a phishing detection script",
-    "Build a SIEM log parser",
-    "Conduct a simple vulnerability scan report"
-  ],
-  "DevOps": [
-    "CI/CD pipeline with GitHub Actions",
-    "Monitoring setup with Prometheus + Grafana",
-    "Infrastructure as Code demo with Terraform",
-    "Automate deployment with Ansible"
-  ],
-  "Cloud (AWS)": [
-    "Deploy a static website on S3 + CloudFront",
-    "ETL pipeline with AWS Glue and Athena",
-    "Serverless REST API using AWS Lambda",
-    "Data lake demo with S3 and Redshift Spectrum"
   ],
   "Marketing": [
     "Analyze Google Trends data for product insights",
     "Create a social media engagement dashboard",
+    "Run an A/B test on ad creatives and report",
     "Competitor website SEO audit",
     "Email campaign A/B test report"
   ],
   "Finance": [
     "Build an Excel model for revenue forecasting",
     "Stock portfolio tracker with risk metrics",
+    "Simulate loan repayment schedules with interest rates",
     "Cash flow projection model",
     "Cryptocurrency price tracker dashboard"
   ],
   "HR": [
     "Design an employee satisfaction survey and analyze results",
     "Predict employee attrition using logistic regression",
+    "Create an onboarding process improvement report",
     "Diversity and inclusion dashboard with HR data",
     "Automate employee onboarding checklist in Excel"
   ],
   "Content Writing": [
     "Start a personal blog with 5 SEO-optimized articles",
     "Write a product case study with visuals",
-    "Create a technical tutorial series on Medium",
-    "Draft a whitepaper summarizing an industry trend"
+    "Draft a whitepaper on industry trends",
+    "Create a technical tutorial series on Medium"
+  ],
+  "Data Visualization": [
+    "Interactive COVID-19 dashboard with Plotly",
+    "Visualize world population data with D3.js",
+    "Create a storytelling notebook on climate change"
+  ],
+  "DevOps": [
+    "CI/CD pipeline using GitHub Actions",
+    "Monitoring demo with Prometheus + Grafana",
+    "Infrastructure-as-Code basics with Terraform"
+  ],
+  "UI/UX": [
+    "Redesign a signup flow with Figma",
+    "Create a design system with reusable components",
+    "Conduct a usability test and document findings"
+  ],
+  "Business Analysis": [
+    "SWOT analysis for a startup idea",
+    "Create a requirements document for an e-commerce site",
+    "Build a competitor benchmarking dashboard"
   ],
   "Project Management": [
     "Create a Gantt chart for a software launch",
@@ -139,34 +146,243 @@
     "Brand guideline document for a startup",
     "Design social media post templates in Canva"
   ],
-  "Data Visualization": [
-    "Build interactive dashboards with Plotly/Dash",
-    "Create a geospatial map with Folium",
-    "Visualize network graphs with NetworkX",
-    "Interactive data storytelling with Flourish"
-  ],
-  "Data Engineering": [
-    "Build a batch ETL with Airflow",
-    "Streaming pipeline with Kafka",
-    "Data warehouse schema in Snowflake/BigQuery",
-    "Implement SCD Type 2 in a warehouse"
-  ],
-  "Business Analysis": [
-    "SWOT analysis for a case company",
-    "Requirements document for an e-commerce system",
-    "Business process model in BPMN",
-    "Competitive analysis report"
-  ],
-  "Healthcare": [
-    "Analyze patient readmission dataset",
-    "Dashboard for hospital resource utilization",
-    "Predict heart disease risk with ML",
-    "Medical chatbot for symptom triage (rule-based)"
-  ],
   "Education": [
     "Design an online course curriculum",
     "Student performance analysis using ML",
     "Interactive quiz app with scoring",
     "Survey on digital learning adoption"
+  ],
+
+  "Airflow": [
+    "Orchestrate a daily ETL pipeline with Apache Airflow",
+    "Build DAGs to schedule data quality checks"
+  ],
+  "Android": [
+    "Create a To-Do list mobile app with Android Studio",
+    "Develop a notes app with Firebase backend"
+  ],
+  "Angular": [
+    "Build a responsive e-commerce product page with Angular",
+    "Create a task tracker with Angular Material"
+  ],
+  "Ansible": [
+    "Automate server provisioning with Ansible playbooks",
+    "Set up Nginx + MySQL stack using Ansible roles"
+  ],
+  "ASP.NET": [
+    "Develop an employee directory web app in ASP.NET MVC",
+    "Build a REST API with ASP.NET Core and Entity Framework"
+  ],
+  "AWS": [
+    "Deploy a serverless image resize API with AWS Lambda + S3",
+    "Host a portfolio website on AWS S3 + CloudFront"
+  ],
+  "Azure": [
+    "Build a chatbot using Azure Bot Service",
+    "Deploy a web application on Azure App Service"
+  ],
+  "Bash": [
+    "Write a backup automation script for Linux servers",
+    "Monitor system resources with Bash scripting"
+  ],
+  "BigQuery": [
+    "Analyze public datasets with Google BigQuery",
+    "Build a real-time dashboard querying BigQuery tables"
+  ],
+  "Bootstrap": [
+    "Redesign a landing page using Bootstrap 5",
+    "Build a responsive portfolio site with Bootstrap grid system"
+  ],
+  "Business Consulting": [
+    "Develop a go-to-market strategy for a case startup",
+    "Conduct a cost benefit analysis for a business expansion plan"
+  ],
+  "C++": [
+    "Implement a basic banking system in C++ with OOP",
+    "Build a student record management CLI tool"
+  ],
+  "Cloud (GCP)": [
+    "Deploy a data pipeline with GCP Dataflow and BigQuery",
+    "Create a machine learning model using Vertex AI"
+  ],
+  "Cybersecurity": [
+    "Perform a vulnerability scan with Nessus and write a report",
+    "Set up a SIEM demo with Splunk for log monitoring"
+  ],
+  "Django": [
+    "Build a blog web app with Django ORM",
+    "Create a REST API using Django Rest Framework"
+  ],
+  "ElasticSearch": [
+    "Index and search product catalog with ElasticSearch",
+    "Set up a log analytics dashboard using ELK stack"
+  ],
+  "Finance (Advanced)": [
+    "Automate stock price alerts using Python + Yahoo Finance API",
+    "Develop a risk-adjusted return analysis model in Excel"
+  ],
+  "Healthcare": [
+    "Predict patient readmission using ML",
+    "Design a hospital bed occupancy dashboard"
+  ],
+  "Kafka": [
+    "Stream Twitter data into a database with Kafka",
+    "Build a real-time log monitoring pipeline using Kafka + Spark"
+  ],
+  "Node.js": [
+    "Build a RESTful API for a task manager with Node.js + Express",
+    "Implement authentication with JWT in Node.js"
+  ],
+  "PHP": [
+    "Develop a blog CMS using PHP + MySQL",
+    "Create a student result management portal in PHP"
+  ],
+  "Sales & Marketing": [
+    "Design an in-store campaign performance dashboard",
+    "Perform market segmentation analysis using survey data"
+  ],
+  "Supply Chain": [
+    "Optimize inventory levels with EOQ model in Excel",
+    "Simulate a supply chain logistics network with AnyLogic"
+  ],
+  "Terraform": [
+    "Provision AWS infrastructure with Terraform modules",
+    "Set up IaC for a 3-tier web app deployment"
+  ],
+  
+  "Apache Spark": [
+    "Batch process large CSV datasets with Spark DataFrame API",
+    "Real-time stream processing with Spark Structured Streaming"
+  ],
+  "AR/VR": [
+    "Build a VR interior design walkthrough in Unity",
+    "Develop an AR business card app with ARKit/ARCore"
+  ],
+  "Blockchain": [
+    "Create a simple Ethereum smart contract for token transfer",
+    "Build a decentralized voting dApp with Solidity"
+  ],
+  "C": [
+    "Implement a file compression tool using Huffman coding in C",
+    "Build a simple shell (command interpreter) in C"
+  ],
+  "C#": [
+    "Create a Windows Forms inventory management app",
+    "Develop a Unity 3D game prototype with C# scripting"
+  ],
+  "Computer Vision": [
+    "Face detection system with OpenCV",
+    "Vehicle detection in traffic footage with YOLO"
+  ],
+  "Data Engineering": [
+    "Implement Slowly Changing Dimensions in a warehouse schema",
+    "Create a data pipeline moving data from MySQL to Snowflake"
+  ],
+  "Excel (Advanced)": [
+    "Build a dynamic dashboard with slicers and pivot charts",
+    "Develop a VBA macro for automated report generation"
+  ],
+  "Git/GitHub": [
+    "Create and manage a branching workflow for a sample project",
+    "Set up GitHub Actions CI pipeline for automated testing"
+  ],
+  "Google Cloud": [
+    "Deploy a web app on Google App Engine",
+    "Use BigQuery ML to train a logistic regression model"
+  ],
+  "IoT": [
+    "Build a smart home temperature logger with Raspberry Pi",
+    "Stream IoT sensor data to a cloud dashboard"
+  ],
+  "Java": [
+    "Build a Spring Boot REST API for e-commerce catalog",
+    "Implement a Library Management System with JDBC"
+  ],
+  "Julia": [
+    "Perform linear regression with Julia’s DataFrames.jl",
+    "Build a basic image processing tool in Julia"
+  ],
+  "MATLAB": [
+    "Simulate control systems with MATLAB Simulink",
+    "Perform image edge detection in MATLAB"
+  ],
+  "R": [
+    "Run exploratory data analysis with ggplot2",
+    "Build a time-series forecasting model with Prophet"
+  ],
+  "Scala": [
+    "Implement word count with Scala + Spark",
+    "Build a REST API with Play Framework in Scala"
+  ],
+  "SEO": [
+    "Perform keyword research and ranking gap analysis",
+    "Audit a website’s on-page SEO and propose fixes"
+  ],
+  "Statistics": [
+    "Perform hypothesis testing on A/B test data",
+    "Build a regression analysis report on housing prices"
+  ],
+  "Unity": [
+    "Prototype a 2D platformer game",
+    "Develop a VR training simulator in Unity"
+  ],
+
+  "Accounting": [
+    "Prepare a financial statements model (Balance Sheet, P&L, Cash Flow)",
+    "Create a variance analysis report for budget vs actuals"
+  ],
+  "Business Expansion": [
+    "Develop a market entry strategy report for a new region",
+    "Perform competitor analysis for expansion planning"
+  ],
+  "Change Management": [
+    "Draft a change management plan for a system upgrade",
+    "Conduct stakeholder impact analysis for organizational change"
+  ],
+  "Communication": [
+    "Design a corporate communication plan for product launch",
+    "Create a presentation deck for investor briefing"
+  ],
+  "Customer Service": [
+    "Build a customer satisfaction survey and analyze responses",
+    "Create a knowledge base/FAQ for customer support"
+  ],
+  "Leadership": [
+    "Prepare a leadership development training plan",
+    "Design a team motivation and engagement workshop"
+  ],
+  "Management Accounting": [
+    "Develop a cost allocation model for shared services",
+    "Create a breakeven analysis for a new product line"
+  ],
+  "Operations Management": [
+    "Create a process improvement report for order fulfillment",
+    "Develop a KPI dashboard for operations efficiency"
+  ],
+  "Procurement": [
+    "Design a vendor evaluation and scoring template",
+    "Draft a procurement risk assessment checklist"
+  ],
+  "Retail Management": [
+    "Prepare a store layout optimization plan",
+    "Create a seasonal sales forecast and inventory plan"
+  ],
+  "Sales": [
+    "Build a sales pipeline tracking template in Excel",
+    "Design a quarterly sales performance report"
+  ],
+  "Strategic Planning": [
+    "Develop a 3-year strategic roadmap for a case company",
+    "Perform a SWOT + PESTLE analysis for an industry"
+  ],
+  "Supply_Chain": [
+    "Create a distribution network optimization model",
+    "Build a supplier performance evaluation dashboard"
+  ],
+  "Training & Development": [
+    "Design a new hire training curriculum",
+    "Build a learning progress tracker for employees"
   ]
+
 }
+
