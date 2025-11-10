@@ -135,9 +135,8 @@ AI-ML_Projects/
 
 ### Run in Jupyter
 
-1. Open `notebooks/feature_engineering/1_setup.ipynb` to load datasets.
-2. Process with `2_preprocessing.ipynb`.
-3. Try recommendations in `3_recommender.ipynb`.
+1. Open `notebooks/01_setup.ipynb` to load datasets.
+2. Process & try recommendations in `02_matcher&recommender.ipynb`.
 
 ### Run demo app
 
@@ -181,7 +180,7 @@ streamlit run app.py
 
 * Improve resume parser with ML-based NER.
 * Add more curated project ideas.
-* Deploy Streamlit app online (Heroku / Streamlit Cloud).
+* Host the project  (using React for frontend & GCP for backend).
 
 ---
 
