@@ -18,9 +18,36 @@ logs/
 
 
 # Ignore specific docs
+
+Plan.md
 To-Do.md
+after_fix.md
+Checklist.md
+ignore_files.md
+project_ideas.md
 Useful_Commands.md
+project_structure_tree.md
+
 notebooks/hidden.ipynb
+notebooks/results.md
+notebooks/working(WWH).md
+ 
+src/notes.md
+src/diagnostic_cell.ipynb
+
+apps/app_try.py
+
+datasets/processed/jobs_merged_unified.csv
+datasets/final/jobs_skills/jobs_unified_with_skills_FIXED.parquet
+
+.vscode_settings.json
 
 #Ignore specific folders
-datasets/prepared/
+# datasets/prepared/
+deployment.tar.gz
+src.tar.gz
+deployment/
+datasets/raw/ods_format/dice_com-job_us_sample.csv
+notebooks/feature_engineering/
+notebooks/deploy
+assets

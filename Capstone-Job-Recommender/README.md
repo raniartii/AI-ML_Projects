@@ -27,19 +27,79 @@ Built with **Python**, **pandas**, and **NLP-based parsing**.
 ```
 AI-ML_Projects/
 └── Capstone-Job-Recommender/
+├── apps/
+│ ├── app.py
+│ └── logo.png
+│
 ├── datasets/
-│ ├── prepared/
-│ ├── processed/
-│ │ ├── jobs_merged.csv
-│ │ └── skills_taxonomy.json
-│ └── raw/
+│
+├── final
+│   └── jobs_skills
+│       ├── jobs_unified_with_skills.csv
+│       ├── jobs_unified_with_skills_FIXED.parquet
+│       ├── jobs_unified_with_skills.parquet
+│       ├── skills_extraction_audit.csv
+│       └── vocab
+│           ├── jobs_clean.parquet
+│           ├── jobs_unified_with_skills_FIXED.parquet
+│           ├── jobs_vectors.npz
+│           ├── jobs_vectors.row_idx.npy
+│           ├── jobs_vectors.rows.txt
+│           └── skills_vocab.csv
+├── prepared
+│   ├── aliases.json
+│   ├── dice_com_deduped.csv
+│   ├── dice_com_duplicates.csv
+│   ├── field_map.json
+│   ├── jobs_unified.csv
+│   ├── jobs_unified.parquet
+│   ├── morocco_deduped.csv
+│   ├── morocco_duplicates.csv
+│   ├── project_ideas.json
+│   ├── skills_taxonomy.json
+│   ├── srilanka_deduped.csv
+│   └── srilanka_duplicates.csv
+├── processed
+│ │ ├── field_role_map.json
+│ └ └── jobs_merged_unified.csv
+│ 
+└── raw
+│ │ ├── dice_com-job_us_sample.csv
+│ │ ├── IT_Job_Dataset_SriLanka_20000 (1).csv
+│ │ ├── morocco_jobs_sampled (5).csv
+│ │ └── ods_format
+│ │     ├── dice_com-job_us_sample.ods
+│ │     ├── IT_Job_Dataset_SriLanka_20000 (1).ods
+│       └── morocco_jobs_sampled (5).ods
+├── src /
+│ ├── api/
+│ │   ├── check_paths.py
+│ │   ├── main.py
+│ │   └── __pycache__
+│ │       ├── check_paths.cpython-311.pyc
+│ │       └── main.cpython-311.pyc
+│ ├── diagnostic_cell.ipynb
+│ ├── __init__.py
+│ ├── matcher.py
+│ ├── notes.md
+│ ├── paths.py
+│ ├── __pycache__ /
+│ │   ├── __init__.cpython-311.pyc
+│ │   ├── matcher.cpython-311.pyc
+│ │   ├── paths.cpython-311.pyc
+│ │   └── step7_gap_projects.cpython-311.pyc
+│ ├── rebuild_jobs_vectors.py
+│ └── step7_gap_projects.py
 │
 ├── notebooks/
-│ ├── EDA_dice_com.ipynb
-│ ├── EDA_IT_Job.ipynb
-│ ├── EDA_merge.ipynb
-│ ├── EDA_morocco.ipynb
-│ └── hidden.ipynb
+│ ├── basic_EDA
+│ │ ├── EDA_dice_com-job_us_sample.ipynb
+│ │ ├── EDA_IT_Job_Dataset_SriLanka_20000.ipynb
+│ │ ├── EDA_merged_data.ipynb
+│ │ └── EDA_morocco_jobs.ipynb
+│ │
+│ ├── 01_setup.ipynb
+│ └── 02_matcher&recommender.ipynb
 │
 ├── .gitignore
 ├── README.md
