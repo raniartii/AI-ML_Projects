@@ -24,7 +24,7 @@ Built with **Python**, **pandas**, and **NLP-based parsing**.
 
 
 ## 📂 Project Structure
-```
+```markdown
 AI-ML_Projects/
 └── Capstone-Job-Recommender/
 ├── apps/
@@ -101,6 +101,14 @@ AI-ML_Projects/
 │ ├── 01_setup.ipynb
 │ └── 02_matcher&recommender.ipynb
 │
+├── ss/
+│ ├── InitialScreen.png
+│ ├── Sample.png
+│ ├── JobMatch.png
+│ ├── ProjectAdvice.png
+│ ├── DownloadSuggestions.png
+│ └── Working.png
+│ 
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
@@ -125,7 +133,7 @@ AI-ML_Projects/
    python -m venv venv
    source venv/bin/activate   # Linux / Mac
    venv\Scripts\activate      # Windows
-
+   
    pip install -r requirements.txt
    ```
 
@@ -166,6 +174,20 @@ streamlit run app.py
 
 ---
 
+## Frontend Screenshots 
+
+![](ss/InitialScreen.png)
+
+![](ss/Sample.png)
+
+![](ss/JobMatch.png)
+
+![](ss/ProjectAdvice.png)
+
+![](ss/DownloadSuggestions.png)
+
+![](ss/Working.png)
+
 ## 🛠️ Tech Stack
 
 * **Python** (pandas, numpy, scikit-learn)
@@ -186,4 +208,4 @@ streamlit run app.py
 
 ## 👨‍💻 Author
 
-Built with ❤️ by *Arti Rani* for project submission (Sept 2025).
+Built by *Arti Rani* for project submission (Sept 2025).
